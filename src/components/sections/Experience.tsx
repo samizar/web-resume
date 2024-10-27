@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaGraduationCap, FaLanguage, FaFootballBall } from 'react-icons/fa';
 
 export default function Experience() {
   const experiences = [
@@ -6,6 +7,7 @@ export default function Experience() {
       role: "CEO and Co-founder",
       company: "Klu.so",
       location: "Espoo, Finland",
+      period: "11/2022 – Present",
       achievements: [
         "Secured pre-seed from Antler VC of 125,000 USD",
         "Won Arctic 15 pitching competition against 140 European startups",
@@ -22,7 +24,7 @@ export default function Experience() {
       role: "Founder",
       company: "Tira.so",
       location: "Helsinki, Finland",
-      period: "01/2021 – Present",
+      period: "01/2021 – 08/2022",
       achievements: [
         "Executed A/B testing initiatives leading to 32% increase in conversions",
         "Raised €70,000 pre-seed funding",
@@ -47,7 +49,7 @@ export default function Experience() {
       ]
     },
     {
-      role: "Founder & CEO",
+      "role": "Founder & CEO (acquired)",
       company: "Xhai Studios",
       location: "Cyberjaya, Malaysia",
       period: "08/2015 – 09/2019",
@@ -94,9 +96,9 @@ export default function Experience() {
         <div 
           key={index} 
           className="mb-8 p-6 bg-white border-4 border-black rounded-lg 
-                     shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] 
+                     shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 
                      transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 
-                     hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+                     hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]"
         >
           <h3 className="text-xl font-bold mb-2 text-black">{job.role}</h3>
           <div className="flex gap-2 mb-4 text-gray-700 font-medium">
@@ -119,6 +121,54 @@ export default function Experience() {
           </ul>
         </div>
       ))}
+
+      {/* Separator between Experience and Education, Languages, Hobbies */}
+      <hr className="my-12 border-black border-t-4" />
+
+      {/* Education, Languages, and Hobbies Section */}
+      <section className="mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="col-span-2 p-6 bg-pink-100 border-4 border-black rounded-lg shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
+            <div className="flex items-center gap-3 mb-4">
+              <svg className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <FaGraduationCap />
+              </svg>
+              <h3 className="text-xl font-bold text-black">Education</h3>
+            </div>
+            <p className="text-gray-800 font-medium">MBA: Communication & Public Relations - Limkokwing University, Cyberjaya, Malaysia</p>
+            <p className="text-gray-800 font-medium">2012</p>
+            <p className="text-gray-800 font-medium">BA: Marketing and International Business - MSA/Middle-Sex University, London, United Kingdom</p>
+            <p className="text-gray-800 font-medium">2010</p>
+          </div>
+          <div className="p-6 bg-yellow-100 border-4 border-black rounded-lg shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
+            <div className="flex items-center gap-3 mb-4">
+              <svg className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <FaLanguage />
+              </svg>
+              <h3 className="text-xl font-bold text-black">Languages</h3>
+            </div>
+            <ul className="list-disc list-inside">
+              <li className="text-gray-800 font-medium">English (Native)</li>
+              <li className="text-gray-800 font-medium">Arabic (Native)</li>
+              <li className="text-gray-800 font-medium">Swedish (Beginner)</li>
+            </ul>
+          </div>
+          <div className="p-6 bg-green-100 border-4 border-black rounded-lg shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
+            <div className="flex items-center gap-3 mb-4">
+              <svg className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <FaFootballBall />
+              </svg>
+              <h3 className="text-xl font-bold text-black">Hobbies</h3>
+            </div>
+            <ul className="list-disc list-inside">
+              <li className="text-gray-800 font-medium">Martial Arts</li>
+              <li className="text-gray-800 font-medium">Poetry</li>
+              <li className="text-gray-800 font-medium">Physics</li>
+              <li className="text-gray-800 font-medium">Travel</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }

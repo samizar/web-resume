@@ -10,65 +10,65 @@ export default function Footer() {
 
   return (
     <footer className="border-t-4 border-black bg-[#FFD93D] mt-20">
-      <div className="max-w-4xl mx-auto py-8 px-4">
-        <div className="flex flex-col items-center gap-6">
+      <div className="max-w-4xl mx-auto py-6 px-4">
+        <div className="flex flex-col items-center gap-4">
           {/* Contact Button */}
           <button 
             onClick={handleEmailClick}
-            className="flex items-center gap-2 px-6 py-3 bg-white border-4 border-black rounded-md 
+            className="flex items-center gap-2 px-4 py-2 bg-white border-4 border-black rounded-md 
                      hover:bg-black hover:text-white transition-all duration-300 
-                     shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
-                     hover:translate-x-1 hover:-translate-y-1 text-black font-bold w-auto"
+                     shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
+                     hover:translate-x-1 hover:-translate-y-1 text-black font-semibold text-sm w-auto"
           >
-            <Mail size={24} strokeWidth={2.5} />
+            <Mail size={15} strokeWidth={2} />
             <span>Get in Touch</span>
           </button>
 
           {/* Social Links */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3">
             <a href="https://www.linkedin.com/in/samiazg/" 
-               className="flex items-center gap-2 px-6 py-3 bg-white border-4 border-black rounded-md 
+               className="flex items-center gap-2 px-4 py-2 bg-white border-4 border-black rounded-md 
                           hover:bg-black hover:text-white transition-all duration-300 
-                          shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
-                          hover:translate-x-1 hover:-translate-y-1 text-black font-bold">
-              <Linkedin size={24} strokeWidth={2.5} />
+                          shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
+                          hover:translate-x-1 hover:-translate-y-1 text-black font-semibold text-sm">
+              <Linkedin size={15} strokeWidth={2} />
               <span>LinkedIn</span>
             </a>
             <a href="https://github.com/samizar" 
-               className="flex items-center gap-2 px-6 py-3 bg-white border-4 border-black rounded-md 
+               className="flex items-center gap-2 px-4 py-2 bg-white border-4 border-black rounded-md 
                           hover:bg-black hover:text-white transition-all duration-300 
-                          shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
-                          hover:translate-x-1 hover:-translate-y-1 text-black font-bold">
-              <Github size={24} strokeWidth={2.5} />
+                          shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
+                          hover:translate-x-1 hover:-translate-y-1 text-black font-semibold text-sm">
+              <Github size={15} strokeWidth={2} />
               <span>GitHub</span>
             </a>
             <a href="https://medium.com/@samizarifa" 
-               className="flex items-center gap-2 px-6 py-3 bg-white border-4 border-black rounded-md 
+               className="flex items-center gap-2 px-4 py-2 bg-white border-4 border-black rounded-md 
                           hover:bg-black hover:text-white transition-all duration-300 
-                          shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
-                          hover:translate-x-1 hover:-translate-y-1 text-black font-bold">
-              <BookOpen size={24} strokeWidth={2.5} />
+                          shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
+                          hover:translate-x-1 hover:-translate-y-1 text-black font-semibold text-sm">
+              <BookOpen size={15} strokeWidth={2} />
               <span>Medium</span>
             </a>
             <a href="https://www.npmjs.com/~azag" 
-               className="flex items-center gap-2 px-6 py-3 bg-white border-4 border-black rounded-md 
+               className="flex items-center gap-2 px-4 py-2 bg-white border-4 border-black rounded-md 
                           hover:bg-black hover:text-white transition-all duration-300 
-                          shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
-                          hover:translate-x-1 hover:-translate-y-1 text-black font-bold">
-              <Package size={24} strokeWidth={2.5} />
+                          shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
+                          hover:translate-x-1 hover:-translate-y-1 text-black font-semibold text-sm">
+              <Package size={15} strokeWidth={2} />
               <span>NPM</span>
             </a>
             <a href="https://abuzarifa.com" 
-               className="flex items-center gap-2 px-6 py-3 bg-white border-4 border-black rounded-md 
+               className="flex items-center gap-2 px-4 py-2 bg-white border-4 border-black rounded-md 
                           hover:bg-black hover:text-white transition-all duration-300 
-                          shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
-                          hover:translate-x-1 hover:-translate-y-1 text-black font-bold">
-              <Globe size={24} strokeWidth={2.5} />
+                          shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
+                          hover:translate-x-1 hover:-translate-y-1 text-black font-semibold text-sm">
+              <Globe size={15} strokeWidth={2} />
               <span>Website</span>
             </a>
           </div>
 
-          <p className="text-black font-bold">© 2024 Sami Abuzarifa</p>
+          <p className="text-black font-semibold text-sm">© 2024 Sami Abuzarifa</p>
         </div>
       </div>
     </footer>

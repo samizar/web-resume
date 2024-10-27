@@ -9,17 +9,73 @@ export default function Skills() {
       animation: (
         <div className="absolute -left-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
           <svg width="200" height="200" viewBox="0 0 200 200">
-            <g className="money-animation">
-              <text x="80" y="0" className="text-2xl fill-blue-500 animate-money-rain opacity-80">$</text>
-              <text x="100" y="-30" className="text-2xl fill-blue-500 animate-money-rain opacity-80" style={{animationDelay: "0.5s"}}>$</text>
-              <text x="120" y="-60" className="text-2xl fill-blue-500 animate-money-rain opacity-80" style={{animationDelay: "1s"}}>$</text>
-              <text x="140" y="-90" className="text-2xl fill-blue-500 animate-money-rain opacity-80" style={{animationDelay: "1.5s"}}>$</text>
-              <path d="M40 160 Q80 120 120 100 T180 40" fill="none" stroke="#4285f4" strokeWidth="3" strokeDasharray="5,5"/>
+            {/* Static bottom part of briefcase */}
+            <rect x="30" y="100" width="140" height="70" rx="4" 
+                  className="fill-white stroke-black stroke-[4]" />
+      
+            {/* Top lid that opens and disappears */}
+            <g className="origin-bottom opacity-100 group-hover:animate-briefcase-sequence">
+              {/* Closed briefcase top */}
+              <path d="M30 40 h140 v60 h-140 z" 
+                    className="fill-white stroke-black stroke-[4]" />
+              {/* Handle */}
+              <rect x="85" y="50" width="30" height="10" rx="2" 
+                    className="fill-white stroke-black stroke-[3]" />
+              {/* Locks */}
+              <rect x="45" y="95" width="20" height="10" rx="2" className="fill-black" />
+              <rect x="135" y="95" width="20" height="10" rx="2" className="fill-black" />
+            </g>
+      
+            {/* Money stacks - initially hidden, shows after lid animation */}
+            <g className="opacity-0 group-hover:animate-reveal-money">
+              {/* First row of stacks */}
+              <g>
+                <rect x="35" y="110" width="40" height="25" className="fill-green-100 stroke-green-600" />
+                <rect x="35" y="110" width="40" height="5" className="fill-green-200 stroke-green-600" />
+                <text x="45" y="127" className="text-[10px] fill-green-700">$100</text>
+                <line x1="35" y1="120" x2="75" y2="120" className="stroke-green-600" strokeDasharray="2,2"/>
+                
+                <rect x="80" y="110" width="40" height="25" className="fill-green-100 stroke-green-600" />
+                <rect x="80" y="110" width="40" height="5" className="fill-green-200 stroke-green-600" />
+                <text x="90" y="127" className="text-[10px] fill-green-700">$100</text>
+                <line x1="80" y1="120" x2="120" y2="120" className="stroke-green-600" strokeDasharray="2,2"/>
+                
+                <rect x="125" y="110" width="40" height="25" className="fill-green-100 stroke-green-600" />
+                <rect x="125" y="110" width="40" height="5" className="fill-green-200 stroke-green-600" />
+                <text x="135" y="127" className="text-[10px] fill-green-700">$100</text>
+                <line x1="125" y1="120" x2="165" y2="120" className="stroke-green-600" strokeDasharray="2,2"/>
+              </g>
+      
+              {/* Second row of stacks */}
+              <g>
+                <rect x="35" y="140" width="40" height="25" className="fill-green-100 stroke-green-600" />
+                <rect x="35" y="140" width="40" height="5" className="fill-green-200 stroke-green-600" />
+                <text x="45" y="157" className="text-[10px] fill-green-700">$100</text>
+                <line x1="35" y1="150" x2="75" y2="150" className="stroke-green-600" strokeDasharray="2,2"/>
+                
+                <rect x="80" y="140" width="40" height="25" className="fill-green-100 stroke-green-600" />
+                <rect x="80" y="140" width="40" height="5" className="fill-green-200 stroke-green-600" />
+                <text x="90" y="157" className="text-[10px] fill-green-700">$100</text>
+                <line x1="80" y1="150" x2="120" y2="150" className="stroke-green-600" strokeDasharray="2,2"/>
+                
+                <rect x="125" y="140" width="40" height="25" className="fill-green-100 stroke-green-600" />
+                <rect x="125" y="140" width="40" height="5" className="fill-green-200 stroke-green-600" />
+                <text x="135" y="157" className="text-[10px] fill-green-700">$100</text>
+                <line x1="125" y1="150" x2="165" y2="150" className="stroke-green-600" strokeDasharray="2,2"/>
+              </g>
+            </g>
+      
+            {/* Flying money - appears last */}
+            <g className="opacity-0 group-hover:animate-reveal-flying-money">
+              <text x="50" y="30" className="text-2xl fill-blue-500 animate-money-rain opacity-80">$</text>
+              <text x="80" y="20" className="text-2xl fill-blue-500 animate-money-rain opacity-80" style={{animationDelay: "0.3s"}}>$</text>
+              <text x="110" y="25" className="text-2xl fill-blue-500 animate-money-rain opacity-80" style={{animationDelay: "0.6s"}}>$</text>
+              <text x="140" y="15" className="text-2xl fill-blue-500 animate-money-rain opacity-80" style={{animationDelay: "0.9s"}}>$</text>
             </g>
           </svg>
         </div>
-      )
-    },
+      )      
+},
     {
       category: "Product",
       skills: "Product Analytics, Problem-Solving, UI UX, Storytelling, Product Roadmaps, Agile",
@@ -67,6 +123,7 @@ export default function Skills() {
         </div>
       )
     },
+
     {
       category: "Technology",
       skills: "HTML, CSS, JS, React.js, Next.js, GraphQL, AWS, and many others",
@@ -111,8 +168,7 @@ function App() {
       </button>
     </div>
   );
-}
-export default App;`}
+}`}
                 </div>
               </div>
             </foreignObject>
@@ -136,16 +192,35 @@ export default App;`}
       animation: (
         <div className="absolute -right-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
           <svg width="200" height="200" viewBox="0 0 200 200">
-            <path 
-              className="drawing animate-draw"
-              d="M40 100 Q70 40 100 100 T160 100 M60 140 Q100 80 140 140"
-              fill="none" 
-              stroke="#ea4335" 
-              strokeWidth="3"
-              strokeDasharray="1000"
-              strokeLinecap="round"
+            {/* Whiteboard Frame */}
+            <rect x="25" y="15" width="150" height="120" rx="6" 
+                  className="fill-white stroke-black stroke-[4]" />
+            
+            {/* Drawing Area */}
+            <rect x="35" y="25" width="130" height="90" rx="4" 
+                  className="fill-white stroke-black stroke-[2]" />
+            
+            {/* Stand */}
+            <path d="M70 135 h60 l25 40 h-110 l25 -40" 
+                  className="fill-white stroke-black stroke-[4]" />
+            
+            {/* Drawing Animation */}
+            <path className="animate-draw stroke-rose-500 stroke-[3] fill-none"
+                  strokeLinecap="round"
+                  strokeDasharray="1000"
+                  d="M45 45 Q100 35 120 45 T150 65
+                     M45 85 Q70 75 95 85 T150 95
+                     M60 65 Q80 55 100 65 T140 75"
             />
-            <circle cx="160" cy="100" r="5" fill="#ea4335"/>
+            
+            {/* Tray */}
+            <rect x="35" y="120" width="130" height="8" rx="2" 
+                  className="fill-white stroke-black stroke-[3]" />
+            
+            {/* Markers */}
+            <rect x="40" y="122" width="15" height="4" rx="1" className="fill-rose-500" />
+            <rect x="60" y="122" width="15" height="4" rx="1" className="fill-blue-500" />
+            <rect x="80" y="122" width="15" height="4" rx="1" className="fill-green-500" />
           </svg>
         </div>
       )
