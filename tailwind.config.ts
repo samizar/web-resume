@@ -30,8 +30,43 @@ const config: Config = {
           'to': { transform: 'translateY(-50%)' }
         },
         'draw': {
-          'from': { strokeDashoffset: '1000' },
-          'to': { strokeDashoffset: '0' }
+          'from': { 
+            strokeDasharray: '1000',
+            strokeDashoffset: '1000',
+            opacity: '0'
+          },
+          '20%': {
+            opacity: '1'
+          },
+          'to': { 
+            strokeDasharray: '1000',
+            strokeDashoffset: '0',
+            opacity: '1'
+          }
+        },
+        'draw-circle': {
+          'from': { 
+            strokeDasharray: '500',
+            strokeDashoffset: '500',
+            opacity: '0'
+          },
+          'to': { 
+            strokeDasharray: '500',
+            strokeDashoffset: '0',
+            opacity: '1'
+          }
+        },
+        'draw-triangle': {
+          'from': { 
+            strokeDasharray: '400',
+            strokeDashoffset: '400',
+            opacity: '0'
+          },
+          'to': { 
+            strokeDasharray: '400',
+            strokeDashoffset: '0',
+            opacity: '1'
+          }
         },
         'float': {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -65,40 +100,46 @@ const config: Config = {
           '60%': { opacity: '0' },
           '100%': { opacity: '1' }
         },
-        'car-move': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(100vw)' },
+        'chalk-appear': {
+          'from': { 
+            opacity: '0',
+            transform: 'translateY(10px)'
+          },
+          'to': { 
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
         },
-        'wheel-spin': {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
-        'exhaust-smoke': {
-          '0%': { opacity: '0', transform: 'translateY(0) scale(0.5)' },
-          '50%': { opacity: '1', transform: 'translateY(-20px) scale(1)' },
-          '100%': { opacity: '0', transform: 'translateY(-40px) scale(1.5)' },
-        },
-        'brake-smoke': {
-          '0%': { opacity: '0', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.5)' },
-          '100%': { opacity: '0', transform: 'scale(2)' },
-        },
+        'chalk-mark': {
+          'from': {
+            opacity: '0',
+            transform: 'scale(0.9)'
+          },
+          'to': {
+            opacity: '0.5',
+            transform: 'scale(1)'
+          }
+        }
       },
       animation: {
         'money-rain': 'money-rain 2s infinite',
         'typing': 'typing 3s steps(30, end) infinite',
         'blink': 'blink 1s step-end infinite',
         'code-scroll': 'code-scroll 10s linear infinite',
-        'draw': 'draw 3s ease-in-out infinite',
+        'draw': 'draw 2.5s ease-out forwards',
+        'draw-circle': 'draw-circle 2s ease-out forwards',
+        'draw-triangle': 'draw-triangle 2s ease-out forwards',
         'float': 'float 3s ease-in-out infinite',
         'scroll-up': 'scroll-up 10s linear infinite',
         'briefcase-sequence': 'briefcase-sequence 1.5s ease-out forwards',
         'reveal-money': 'reveal-money 2s ease-out forwards',
         'reveal-flying-money': 'reveal-flying-money 2.5s ease-out forwards',
-        'car-move': 'car-move 10s linear infinite',
-        'wheel-spin': 'wheel-spin 1s linear infinite',
-        'exhaust-smoke': 'exhaust-smoke 2s ease-in-out infinite',
-        'brake-smoke': 'brake-smoke 1s ease-out',
+        'chalk-appear': 'chalk-appear 0.5s ease-out forwards',
+        'chalk-mark': 'chalk-mark 0.3s ease-out forwards'
+      },
+      boxShadow: {
+        'chalk': '2px 2px 4px rgba(0, 0, 0, 0.1)',
+        'board': '0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1)'
       }
     },
   },

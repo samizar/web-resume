@@ -90,7 +90,7 @@ export default function Hero() {
             <span>Website</span>
             {showTooltip && (
               <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 
-                              text-xs font-bold text-white bg-black border-2 border-black rounded
+                              text-xs font-bold text-white bg-red-500 border-2 border-black rounded
                               shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] whitespace-nowrap">
                 You are already here!
               </span>

@@ -183,49 +183,75 @@ function App() {
         </div>
       )
     },
-    {
-      category: "Design",
-      skills: "Design Thinking, User Experience Design, UI-UX, Mobile Design, Prototyping, Mockups, Website design",
-      bgColor: "bg-rose-50",
-      borderColor: "border-rose-400",
-      textColor: "text-rose-900",
-      animation: (
-        <div className="absolute -right-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-          <svg width="200" height="200" viewBox="0 0 200 200">
-            {/* Whiteboard Frame */}
-            <rect x="25" y="15" width="150" height="120" rx="6" 
-                  className="fill-white stroke-black stroke-[4]" />
-            
-            {/* Drawing Area */}
-            <rect x="35" y="25" width="130" height="90" rx="4" 
-                  className="fill-white stroke-black stroke-[2]" />
-            
-            {/* Stand */}
-            <path d="M70 135 h60 l25 40 h-110 l25 -40" 
-                  className="fill-white stroke-black stroke-[4]" />
-            
-            {/* Drawing Animation */}
-            <path className="animate-draw stroke-rose-500 stroke-[3] fill-none"
+
+
+
+// Replace just the Design object in your skills array with this updated version:
+
+{
+  category: "Design",
+  skills: "Design Thinking, User Experience Design, UI-UX, Mobile Design, Prototyping, Mockups, Website design",
+  bgColor: "bg-rose-50",
+  borderColor: "border-rose-400",
+  textColor: "text-rose-900",
+  animation: (
+    <div className="absolute -right-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+      <svg width="200" height="200" viewBox="0 0 200 200">
+        {/* Wooden Frame */}
+        <rect x="20" y="20" width="160" height="120" 
+              className="fill-[#8B4513] stroke-[#5D2906] stroke-[8]" />
+        
+        {/* White Board Surface */}
+        <rect x="30" y="30" width="140" height="100" 
+              className="fill-white stroke-[#E5E5E5] stroke-[2]" />
+
+        {/* Chalk Drawings */}
+        <g className="opacity-0 group-hover:opacity-100">
+          {/* Triangle - drawn in segments */}
+          <path d="M60 50 L100 100" 
+                className="fill-none stroke-rose-500 stroke-[4] group-hover:animate-draw-line-1"
+                strokeLinecap="round" />
+          <path d="M100 100 L40 100" 
+                className="fill-none stroke-rose-500 stroke-[4] group-hover:animate-draw-line-2"
+                strokeLinecap="round" />
+          <path d="M40 100 L60 50" 
+                className="fill-none stroke-rose-500 stroke-[4] group-hover:animate-draw-line-3"
+                strokeLinecap="round" />
+
+          {/* Circle - drawn as one continuous motion */}
+          <circle cx="120" cy="75" r="30" 
+                  className="fill-none stroke-rose-500 stroke-[4] group-hover:animate-draw-circle"
                   strokeLinecap="round"
-                  strokeDasharray="1000"
-                  d="M45 45 Q100 35 120 45 T150 65
-                     M45 85 Q70 75 95 85 T150 95
-                     M60 65 Q80 55 100 65 T140 75"
-            />
-            
-            {/* Tray */}
-            <rect x="35" y="120" width="130" height="8" rx="2" 
-                  className="fill-white stroke-black stroke-[3]" />
-            
-            {/* Markers */}
-            <rect x="40" y="122" width="15" height="4" rx="1" className="fill-rose-500" />
-            <rect x="60" y="122" width="15" height="4" rx="1" className="fill-blue-500" />
-            <rect x="80" y="122" width="15" height="4" rx="1" className="fill-green-500" />
-          </svg>
-        </div>
-      )
-    }
-  ];
+                  pathLength="100" />
+        </g>
+        
+        {/* Chalk Tray */}
+        <rect x="20" y="140" width="160" height="15" rx="0"
+              className="fill-[#8B4513] stroke-[#5D2906] stroke-[4]" />
+        <rect x="25" y="140" width="150" height="4" 
+              className="fill-[#5D2906]" />
+
+        {/* Wood Grain Details */}
+        <path d="M20 25 c10 0, 20 2, 160 0 M20 140 c10 0, 20 2, 160 0" 
+              className="stroke-[#5D2906] stroke-[1] fill-none opacity-30" />
+        
+        {/* Chalk pieces */}
+        <rect x="35" y="143" width="20" height="8" rx="1" 
+              className="fill-white opacity-80" />
+        <rect x="65" y="143" width="20" height="8" rx="1" 
+              className="fill-rose-200 opacity-80" />
+
+        {/* Chalk dust effect */}
+        <g className="opacity-0 group-hover:animate-chalk-dust">
+          <circle cx="65" cy="75" r="1" className="fill-gray-200" />
+          <circle cx="125" cy="80" r="1" className="fill-gray-200" />
+          <circle cx="95" cy="95" r="1" className="fill-gray-200" />
+        </g>
+      </svg>
+    </div>
+  )
+}
+];
 
   return (
     <section className="mb-12">
