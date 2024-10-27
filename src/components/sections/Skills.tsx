@@ -48,8 +48,7 @@ export default function Skills() {
             
             {/* Code on Screen */}
             <foreignObject x="55" y="50" width="90" height="60">
-              <div xmlns="http://www.w3.org/1999/xhtml" 
-                   className="font-mono text-[8px] text-green-600 overflow-hidden">
+              <div style={{ fontSize: '8px', fontFamily: 'monospace', color: '#059669' }} className="overflow-hidden">
                 <div className="animate-typing whitespace-nowrap overflow-hidden">
                   {`const product = {
   vision: true,
@@ -97,9 +96,8 @@ export default function Skills() {
 
             {/* Code content */}
             <foreignObject x="45" y="35" width="110" height="70">
-              <div xmlns="http://www.w3.org/1999/xhtml" 
-                   className="animate-code-scroll font-mono text-[8px] text-purple-900">
-                <div className="whitespace-pre">
+              <div style={{ fontSize: '8px', fontFamily: 'monospace', color: '#7e22ce' }} className="overflow-hidden">
+                <div className="whitespace-pre animate-code-scroll">
                   {`import React from 'react';
 function App() {
   const [count, setCount] = 
