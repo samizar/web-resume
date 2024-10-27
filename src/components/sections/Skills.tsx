@@ -6,13 +6,19 @@ export default function Skills() {
       bgColor: "bg-blue-50",
       borderColor: "border-blue-400",
       textColor: "text-blue-900",
-      animation: <div className="absolute -left-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-        <svg className="w-24 h-24">
-          <text x="20" y="40" className="text-3xl fill-blue-500 animate-money-rain">$</text>
-          <text x="40" y="20" className="text-3xl fill-blue-500 animate-money-rain" style={{animationDelay: "0.5s"}}>$</text>
-          <text x="60" y="60" className="text-3xl fill-blue-500 animate-money-rain" style={{animationDelay: "1s"}}>$</text>
-        </svg>
-      </div>
+      animation: (
+        <div className="absolute -left-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+          <svg width="200" height="200" viewBox="0 0 200 200">
+            <g className="money-animation">
+              <text x="80" y="0" className="text-2xl fill-blue-500 animate-money-rain opacity-80">$</text>
+              <text x="100" y="-30" className="text-2xl fill-blue-500 animate-money-rain opacity-80" style={{animationDelay: "0.5s"}}>$</text>
+              <text x="120" y="-60" className="text-2xl fill-blue-500 animate-money-rain opacity-80" style={{animationDelay: "1s"}}>$</text>
+              <text x="140" y="-90" className="text-2xl fill-blue-500 animate-money-rain opacity-80" style={{animationDelay: "1.5s"}}>$</text>
+              <path d="M40 160 Q80 120 120 100 T180 40" fill="none" stroke="#4285f4" strokeWidth="3" strokeDasharray="5,5"/>
+            </g>
+          </svg>
+        </div>
+      )
     },
     {
       category: "Product",
@@ -20,13 +26,47 @@ export default function Skills() {
       bgColor: "bg-green-50",
       borderColor: "border-green-400",
       textColor: "text-green-900",
-      animation: <div className="absolute -right-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-        <svg className="w-24 h-24">
-          <rect x="10" y="20" width="80" height="60" rx="4" className="fill-green-500"/>
-          <rect x="10" y="15" width="80" height="50" rx="4" className="fill-green-600 animate-float"/>
-          <text x="20" y="45" className="text-[10px] fill-white font-mono animate-typing">{"<code/>"}</text>
-        </svg>
-      </div>
+      animation: (
+        <div className="absolute -right-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+          <svg width="200" height="200" viewBox="0 0 200 200">
+            {/* Laptop Screen */}
+            <rect x="45" y="40" width="110" height="80" rx="4" 
+                  className="fill-white stroke-black stroke-[4]" />
+            <rect x="50" y="45" width="100" height="70" rx="2" 
+                  className="fill-green-50 stroke-black stroke-[2]" />
+            
+            {/* Laptop Base */}
+            <path d="M35 120 L165 120 L175 140 L25 140 Z" 
+                  className="fill-white stroke-black stroke-[4]" />
+            
+            {/* Laptop Keyboard Details */}
+            <rect x="45" y="125" width="15" height="3" rx="1" className="fill-black" />
+            <rect x="65" y="125" width="15" height="3" rx="1" className="fill-black" />
+            <rect x="85" y="125" width="15" height="3" rx="1" className="fill-black" />
+            <rect x="105" y="125" width="15" height="3" rx="1" className="fill-black" />
+            <rect x="125" y="125" width="15" height="3" rx="1" className="fill-black" />
+            
+            {/* Code on Screen */}
+            <foreignObject x="55" y="50" width="90" height="60">
+              <div xmlns="http://www.w3.org/1999/xhtml" 
+                   className="font-mono text-[8px] text-green-600 overflow-hidden">
+                <div className="animate-typing whitespace-nowrap overflow-hidden">
+                  {`const product = {
+  vision: true,
+  success: "✨",
+  roadmap: [
+    "design",
+    "build",
+    "ship"
+  ]
+}`}
+                </div>
+                <span className="animate-blink">|</span>
+              </div>
+            </foreignObject>
+          </svg>
+        </div>
+      )
     },
     {
       category: "Technology",
@@ -34,16 +74,60 @@ export default function Skills() {
       bgColor: "bg-purple-50",
       borderColor: "border-purple-400",
       textColor: "text-purple-900",
-      animation: <div className="absolute -left-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-        <div className="w-24 h-24 overflow-hidden">
-          <div className="font-mono text-sm text-purple-600 animate-scroll-up whitespace-pre">
-            {`const code = {
-  run: true,
-  debug: false
-}`}
-          </div>
+      animation: (
+        <div className="absolute -left-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+          <svg width="200" height="200" viewBox="0 0 200 200">
+            {/* Monitor Frame */}
+            <rect x="25" y="15" width="150" height="120" rx="6" 
+                  className="fill-white stroke-black stroke-[4]" />
+            
+            {/* Screen bezel */}
+            <rect x="35" y="25" width="130" height="90" rx="4" 
+                  className="fill-white stroke-black stroke-[3]" />
+            
+            {/* Screen */}
+            <rect x="40" y="30" width="120" height="80" 
+                  className="fill-purple-50 stroke-black stroke-[2]" />
+            
+            {/* Monitor stand */}
+            <path d="M70 135 h60 l15 20 h-90 l15 -20" 
+                  className="fill-white stroke-black stroke-[4]" />
+            <rect x="85" y="155" width="30" height="10" rx="2" 
+                  className="fill-white stroke-black stroke-[3]" />
+
+            {/* Code content */}
+            <foreignObject x="45" y="35" width="110" height="70">
+              <div xmlns="http://www.w3.org/1999/xhtml" 
+                   className="animate-code-scroll font-mono text-[8px] text-purple-900">
+                <div className="whitespace-pre">
+                  {`import React from 'react';
+function App() {
+  const [count, setCount] = 
+    useState(0);
+  return (
+    <div>
+      <h1>Hello!</h1>
+      <button onClick={() => 
+        setCount(c => c + 1)}>
+        Count: {count}
+      </button>
+    </div>
+  );
+}
+export default App;`}
+                </div>
+              </div>
+            </foreignObject>
+
+            {/* Decorative details */}
+            <circle cx="100" cy="125" r="3" className="fill-black" />
+            <rect x="35" y="125" width="20" height="4" rx="1" className="fill-black" />
+            <rect x="60" y="125" width="20" height="4" rx="1" className="fill-black" />
+            <rect x="120" y="125" width="20" height="4" rx="1" className="fill-black" />
+            <rect x="145" y="125" width="20" height="4" rx="1" className="fill-black" />
+          </svg>
         </div>
-      </div>
+      )
     },
     {
       category: "Design",
@@ -51,24 +135,29 @@ export default function Skills() {
       bgColor: "bg-rose-50",
       borderColor: "border-rose-400",
       textColor: "text-rose-900",
-      animation: <div className="absolute -right-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-        <svg className="w-24 h-24">
-          <path 
-            d="M20 40 Q40 20 60 40 T100 40 M30 60 Q50 40 70 60 T110 60" 
-            className="stroke-rose-500 stroke-2 fill-none animate-draw"
-            strokeDasharray="200"
-            strokeDashoffset="200"
-          />
-          <circle cx="20" cy="40" r="2" className="fill-rose-500 animate-float"/>
-        </svg>
-      </div>
+      animation: (
+        <div className="absolute -right-40 top-0 w-32 h-full bg-[#f0f0f0] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+          <svg width="200" height="200" viewBox="0 0 200 200">
+            <path 
+              className="drawing animate-draw"
+              d="M40 100 Q70 40 100 100 T160 100 M60 140 Q100 80 140 140"
+              fill="none" 
+              stroke="#ea4335" 
+              strokeWidth="3"
+              strokeDasharray="1000"
+              strokeLinecap="round"
+            />
+            <circle cx="160" cy="100" r="5" fill="#ea4335"/>
+          </svg>
+        </div>
+      )
     }
   ];
 
   return (
     <section className="mb-12">
       <h2 className="text-2xl font-bold mb-6 border-b-4 border-black pb-2">Skills</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map((skill, index) => (
           <div 
             key={index} 
