@@ -64,10 +64,6 @@ export default function Hero() {
                         shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-black font-bold">
             📧 samabuzarifa@gmail.com
           </div>
-          <div className="flex items-center gap-2 px-6 py-3 bg-white border-4 border-black rounded-md 
-                        shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-black font-bold">
-            📱 +358402217609
-          </div>
         </div>
       </div>
     </div>
