@@ -257,16 +257,20 @@ function App() {
     <section className="mb-12">
       <h2 className="text-2xl font-bold mb-6 border-b-4 border-black pb-2">Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {skills.map((skill, index) => (
-          <div 
-            key={index} 
-            className={`group relative p-6 ${skill.bgColor} border-2 ${skill.borderColor} rounded-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)] hover:translate-x-1 hover:-translate-y-1 transition-transform`}
-          >
-            <h3 className={`font-bold mb-2 text-lg ${skill.textColor}`}>{skill.category}</h3>
-            <p className="text-gray-700">{skill.skills}</p>
-            {skill.animation}
-          </div>
-        ))}
+      {skills.map((skill, index) => (
+  <div 
+    key={index} 
+    className={`group relative p-6 ${skill.bgColor} border-4 border-black rounded-lg 
+                shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 
+                hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]
+                hover:translate-x-1 hover:-translate-y-1 
+                transition-all duration-300`}
+  >
+    <h3 className={`font-bold mb-2 text-xl ${skill.textColor}`}>{skill.category}</h3>
+    <p className="text-gray-700">{skill.skills}</p>
+    {skill.animation}
+  </div>
+))}
       </div>
     </section>
   );
