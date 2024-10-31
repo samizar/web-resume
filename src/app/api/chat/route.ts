@@ -1,12 +1,8 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-if (!process.env.OPENAI_API_KEY) {
-  throw new Error('Missing OPENAI_API_KEY environment variable');
-}
-
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.OPENAI_API_KEY || ''
 });
 
 const systemPrompt = {
@@ -95,6 +91,13 @@ const systemPrompt = {
 };
 
 export async function POST(req: Request) {
+  if (!process.env.OPENAI_API_KEY) {
+    return NextResponse.json(
+      { error: 'OpenAI API key not configured' },
+      { status: 500 }
+    );
+  }
+
   try {
     const body = await req.json();
     const { messages } = body;

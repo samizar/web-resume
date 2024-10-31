@@ -108,10 +108,9 @@ export default function ChatBot() {
       };
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      console.error('Error:', error);
       setMessages(prev => [...prev, { 
         role: 'assistant' as const, 
-        content: "Oops! Something went wrong. Please try again later! 🤖" 
+        content: "Sorry, I'm having trouble connecting to my brain right now. Please try again later! 🤖" 
       }]);
     } finally {
       setIsLoading(false);
