@@ -28,7 +28,7 @@ export default function Bio() {
                     hover:translate-x-1 hover:-translate-y-1 
                     transition-all duration-300">
         <p className="text-lg text-gray-800 leading-relaxed">
-          I&apos;m a product-focused entrepreneur and engineer with over a decade of experience 
+          I&apos;m a product-focused entrepreneur with over a decade of experience 
           building and scaling tech products. My journey spans from founding successful 
           startups to leading product marketing initiatives across Asia and Europe. 
           I&apos;m passionate about combining technical expertise with marketing strategy 
