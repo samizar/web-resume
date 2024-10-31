@@ -66,7 +66,7 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
           <button
             onClick={onClose}
             className="p-2 hover:bg-black hover:text-white transition-all duration-300 
-                     border-2 border-black rounded-md
+                     border-2 border-black rounded-md text-black
                      shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
                      hover:translate-x-1 hover:-translate-y-1"
           >
@@ -118,10 +118,10 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
                      border-4 border-black rounded-md hover:bg-black hover:text-white 
                      transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] 
                      hover:shadow-none hover:translate-x-1 hover:-translate-y-1 
-                     disabled:opacity-50 disabled:cursor-not-allowed"
+                     disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold"
           >
-            {isSending ? 'Sending...' : 'Send Message'} 
-            <Send size={20} strokeWidth={2} />
+            {isSending ? 'Sending...' : 'Send Note'} 
+            <Send size={20} strokeWidth={2.5} />
           </button>
 
           {status === 'success' && (
