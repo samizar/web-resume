@@ -107,7 +107,8 @@ export default function ChatBot() {
         content: data.message
       };
       setMessages(prev => [...prev, botMessage]);
-    } catch (_) {
+    } catch (error: unknown) {
+      console.error('Chat error:', error);
       setMessages(prev => [...prev, { 
         role: 'assistant' as const, 
         content: "Sorry, I'm having trouble connecting to my brain right now. Please try again later! 🤖" 
