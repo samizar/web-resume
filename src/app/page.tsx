@@ -7,9 +7,9 @@ import Footer from '@/components/sections/Footer'
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-[#f0f0f0]">
+    <main className="min-h-screen bg-[#f0f0f0] overflow-x-hidden">
       <Hero />
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Skills />
         <Experience />
       </div>

@@ -94,14 +94,15 @@ export default function Experience() {
       <h2 className="text-2xl font-bold mb-6 border-b-4 border-black pb-2">Experience</h2>
       {experiences.map((job, index) => (
         <div 
-          key={index} 
-          className="mb-8 p-6 bg-white border-4 border-black rounded-lg 
-                     shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 
-                     transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 
-                     hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]"
-        >
-          <h3 className="text-xl font-bold mb-2 text-black">{job.role}</h3>
-          <div className="flex gap-2 mb-4 text-gray-700 font-medium">
+  key={index} 
+  className="mb-6 sm:mb-8 p-4 sm:p-6 bg-white border-4 border-black rounded-lg 
+             shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 
+             transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 
+             hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]"
+>
+  <h3 className="text-lg sm:text-xl font-bold mb-2 text-black">{job.role}</h3>
+  <div className="flex flex-wrap gap-2 mb-4 text-gray-700 font-medium text-sm sm:text-base">
+
             <span>{job.company}</span>
             <span>•</span>
             <span>{job.location}</span>

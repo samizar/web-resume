@@ -26,25 +26,29 @@ export default function Hero() {
   };
 
   return (
-    <div className="bg-[#FFD93D] border-b-4 border-black p-8 mb-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-6xl font-black mb-4 text-black">
-          Sami Abuzarifa
-        </h1>
-        <p className="text-2xl mb-6 text-black font-semibold">
-          Product Marketing & Engineering
-        </p>
-        
-        <div className="flex flex-wrap gap-4 mb-6">
-          <a 
+<div className="bg-[#FFD93D] border-b-4 border-black p-4 sm:p-8 mb-12 overflow-x-hidden">
+  <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+    <h1 className="text-4xl sm:text-6xl font-black mb-4 text-black">
+      Sami Abuzarifa
+    </h1>
+    <p className="text-xl sm:text-2xl mb-6 text-black font-semibold">
+      Product Marketing & Engineering
+    </p>
+    
+    {/* Update social links container */}
+    <div className="flex flex-wrap gap-2 sm:gap-4 mb-6">
+      {/* Update each social link's padding */}
+      <a 
             href="https://www.linkedin.com/in/samiazg/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="flex items-center gap-2 px-6 py-3 bg-white border-4 border-black rounded-md 
-                       hover:bg-black hover:text-white transition-all duration-300 
-                       shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
-                       hover:translate-x-1 hover:-translate-y-1 text-black font-bold">
-            <Linkedin size={24} strokeWidth={2.5} />
+            className="flex items-center gap-2 px-3 py-2 sm:px-6 sm:py-3 bg-white border-4 border-black rounded-md 
+            hover:bg-black hover:text-white transition-all duration-300 
+            shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
+            hover:translate-x-1 hover:-translate-y-1 text-black font-bold
+            text-sm sm:text-base">
+
+      <Linkedin size={24} strokeWidth={2.5} />
             <span>LinkedIn</span>
           </a>
           <a 

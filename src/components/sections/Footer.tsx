@@ -9,8 +9,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t-4 border-black bg-[#FFD93D] mt-20">
-      <div className="max-w-4xl mx-auto py-6 px-4">
+    <footer className="border-t-4 border-black bg-[#FFD93D] mt-20 overflow-x-hidden">
+      <div className="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-4">
           {/* Contact Button */}
           <button 
