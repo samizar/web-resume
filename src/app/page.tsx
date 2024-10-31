@@ -6,6 +6,7 @@ import Skills from '@/components/sections/Skills'
 import Experience from '@/components/sections/Experience'
 import Footer from '@/components/sections/Footer'
 import ChatBot from '@/components/ChatBot'
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
       </div>
       <Footer />
       <ChatBot />
+      <Analytics />
     </main>
   )
 }
