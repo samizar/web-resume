@@ -91,7 +91,23 @@ export default function Experience() {
 
   return (
     <section className="mb-12">
-      <h2 className="text-2xl font-bold mb-6 border-b-4 border-black pb-2">Experience</h2>
+      <div className="mb-8 flex items-center gap-3">
+        <svg 
+          className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
+        </svg>
+        <h2 className="text-3xl font-black text-black">Experience</h2>
+      </div>
       {experiences.map((job, index) => (
         <div 
   key={index} 
@@ -129,10 +145,22 @@ export default function Experience() {
       {/* Education, Languages, and Hobbies Section */}
       <section className="mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Education Section */}
           <div className="col-span-2 p-6 bg-pink-100 border-4 border-black rounded-lg shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
             <div className="flex items-center gap-3 mb-4">
-              <svg className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <FaGraduationCap />
+              <svg 
+                className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M12 14l9-5-9-5-9 5 9 5m0 0l9-5-9-5-9 5 9 5m0 0v6"
+                />
               </svg>
               <h3 className="text-xl font-bold text-black">Education</h3>
             </div>
@@ -141,10 +169,23 @@ export default function Experience() {
             <p className="text-gray-800 font-medium">BA: Marketing and International Business - MSA/Middle-Sex University, London, United Kingdom</p>
             <p className="text-gray-800 font-medium">2010</p>
           </div>
+
+          {/* Languages Section */}
           <div className="p-6 bg-yellow-100 border-4 border-black rounded-lg shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
             <div className="flex items-center gap-3 mb-4">
-              <svg className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <FaLanguage />
+              <svg 
+                className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                />
               </svg>
               <h3 className="text-xl font-bold text-black">Languages</h3>
             </div>
@@ -154,10 +195,23 @@ export default function Experience() {
               <li className="text-gray-800 font-medium">Swedish (Beginner)</li>
             </ul>
           </div>
+
+          {/* Hobbies Section */}
           <div className="p-6 bg-green-100 border-4 border-black rounded-lg shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
             <div className="flex items-center gap-3 mb-4">
-              <svg className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <FaFootballBall />
+              <svg 
+                className="w-8 h-8 text-black transition-transform duration-500 hover:rotate-180" 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
               </svg>
               <h3 className="text-xl font-bold text-black">Hobbies</h3>
             </div>

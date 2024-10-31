@@ -119,6 +119,10 @@ const config: Config = {
             opacity: '0.5',
             transform: 'scale(1)'
           }
+        },
+        'subtle-bounce': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-4px)' }
         }
       },
       animation: {
@@ -135,7 +139,8 @@ const config: Config = {
         'reveal-money': 'reveal-money 2s ease-out forwards',
         'reveal-flying-money': 'reveal-flying-money 2.5s ease-out forwards',
         'chalk-appear': 'chalk-appear 0.5s ease-out forwards',
-        'chalk-mark': 'chalk-mark 0.3s ease-out forwards'
+        'chalk-mark': 'chalk-mark 0.3s ease-out forwards',
+        'subtle-bounce': 'subtle-bounce 2s ease-in-out infinite'
       },
       boxShadow: {
         'chalk': '2px 2px 4px rgba(0, 0, 0, 0.1)',
