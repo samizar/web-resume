@@ -40,7 +40,7 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
         onClose();
         setStatus('idle');
       }, 2000);
-    } catch (_) {
+    } catch {
       setStatus('error');
     } finally {
       setIsSending(false);
