@@ -19,3 +19,12 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+  opacity: 0.5;
+}
+
+.grecaptcha-badge:hover {
+  opacity: 1;
+}

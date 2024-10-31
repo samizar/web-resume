@@ -1,9 +1,9 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { X, Send } from 'lucide-react';
+import ReCAPTCHA from "react-google-recaptcha";
 
-// Add this after the imports
 emailjs.init('hqCFAkmOLo8DHb66d');
 
 interface NoteModalProps {
@@ -14,14 +14,21 @@ interface NoteModalProps {
 export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [isSending, setIsSending] = useState(false);
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
     
     try {
+      const token = await recaptchaRef.current?.executeAsync();
+      if (!token) {
+        setStatus('error');
+        return;
+      }
+
       await emailjs.send(
         'service_52axib4',
         'template_yt35ygq',
@@ -29,6 +36,7 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
           from_name: name,
           message: message,
           to_name: 'Sami',
+          'g-recaptcha-response': token
         },
         'hqCFAkmOLo8DHb66d'
       );
@@ -94,18 +102,26 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
             />
           </div>
 
+          <div className="mb-4">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey="6LcmgHEqAAAAAFYhlQqPQKKLPxCMgh-rPXLyfn6L"
+              size="invisible"
+              badge="bottomright"
+            />
+          </div>
+
           <button
             type="submit"
             disabled={isSending}
-            className="w-full flex items-center justify-center gap-2 px-6 py-3 
-                     bg-[#FFD93D] border-4 border-black rounded-md 
-                     hover:bg-black hover:text-white transition-all duration-300 
-                     shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none 
-                     hover:translate-x-1 hover:-translate-y-1 text-black font-bold
+            className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-white 
+                     border-4 border-black rounded-md hover:bg-black hover:text-white 
+                     transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] 
+                     hover:shadow-none hover:translate-x-1 hover:-translate-y-1 
                      disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Send size={20} strokeWidth={2.5} />
-            {isSending ? 'Sending...' : 'Send Note'}
+            {isSending ? 'Sending...' : 'Send Message'} 
+            <Send size={20} strokeWidth={2} />
           </button>
 
           {status === 'success' && (
