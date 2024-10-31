@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaGraduationCap, FaLanguage, FaFootballBall } from 'react-icons/fa';
 
 export default function Experience() {
   const experiences = [
