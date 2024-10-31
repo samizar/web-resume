@@ -23,10 +23,15 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
     setIsSending(true);
     
     try {
-      const token = await recaptchaRef.current?.executeAsync();
-      if (!token) {
-        setStatus('error');
-        return;
+      const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      
+      let token = null;
+      if (!isDevelopment) {
+        token = await recaptchaRef.current?.executeAsync();
+        if (!token) {
+          setStatus('error');
+          return;
+        }
       }
 
       await emailjs.send(
@@ -36,7 +41,7 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
           from_name: name,
           message: message,
           to_name: 'Sami',
-          'g-recaptcha-response': token
+          'g-recaptcha-response': token || 'localhost-testing'
         },
         'hqCFAkmOLo8DHb66d'
       );
@@ -48,7 +53,8 @@ export default function NoteModal({ isOpen, onClose }: NoteModalProps) {
         onClose();
         setStatus('idle');
       }, 2000);
-    } catch {
+    } catch (error) {
+      console.error('Email error:', error);
       setStatus('error');
     } finally {
       setIsSending(false);

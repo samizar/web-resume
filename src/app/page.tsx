@@ -4,6 +4,7 @@ import Hero from '@/components/sections/Hero'
 import Skills from '@/components/sections/Skills'
 import Experience from '@/components/sections/Experience'
 import Footer from '@/components/sections/Footer'
+import ChatBot from '@/components/ChatBot'
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
         <Experience />
       </div>
       <Footer />
+      <ChatBot />
     </main>
   )
 }
