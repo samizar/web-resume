@@ -151,7 +151,7 @@ export default function ChatBot() {
             <div className="p-4 h-96 overflow-y-auto bg-gray-50">
               {messages.length === 0 && (
                 <div className="text-center text-gray-500 mt-4">
-                  👋 Hi! Ask me anything about Sami's experience, skills, or background!
+                  👋 Hi! Ask me anything about Sami&apos;s experience, skills, or background!
                 </div>
               )}
               {messages.map((msg, i) => (
